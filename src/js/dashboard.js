@@ -16,7 +16,7 @@ let args = {
 };
 
 export default function dashboard() {
-  d3.json("../data/nl-NL.json", function(error, locale){
+  d3.json("data/nl-NL.json", function(error, locale){
     if (error) throw error;
 
     d3.formatDefaultLocale(locale);
