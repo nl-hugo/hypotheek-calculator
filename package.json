@@ -1,6 +1,6 @@
 {
   "name": "hypotheek",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hypotheek computations",
   "keywords": [
     "d3.js",
