@@ -1,0 +1,393 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hypotheek calculator</title>
+  <link rel="shortcut icon" href="favicon.ico"></head>
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+      <a class="navbar-brand" href="#"><img src="images/calc-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    test</a>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Test</h1>
+        <p>Bereken maandlasten</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+
+
+
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+
+          <div class="a-section">
+            <span class="a-section-title">Woning</span>
+            <div class="a-section-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
+            </div>
+            <div class="parameters">
+  <!-- TODO: precision op 100 nauwkeurig -->
+              <label class="a-parameter" 
+                  data-parameter="koopsom" 
+                  data-value="2.5e5" 
+                  data-valueformat="$,.0f"
+                  data-restrict="Math.max(3e4, Math.min(1e6, (v < 1000 ? v * 1000 : v)))" 
+                  data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
+                  data-scaleformat="$,.0s"
+                  data-readonly="false">
+                <div class="a-parameter-label">
+                  Hypotheekbedrag
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Het bedrag dat geleend wordt.</div>
+                </div>
+              </label>
+
+
+            </div>
+          </div> <!-- section -->
+
+          <div class="a-section">
+            <span class="a-section-title">Hypotheek</span>
+            <div class="a-section-content">
+              De hoogte van de maandelijkse betalingen wordt voor een groot deel bepaald door de opbouw van de lening. Een hypothecaire lening kent een looptijd en kan uit meerdere delen bestaan, ieder met een eigen rentepercentage. Geef hier de verhouding aan tussen het <span class="a-text annuity">annuitaire</span> en het <span class="a-text linear">lineaire</span> deel van de hypotheek en de bijbehorende rentepercentages.
+            </div>
+            <div class="parameters">
+
+              <label class="a-parameter" 
+                  data-parameter="looptijd" 
+                  data-value="30" 
+                  data-valueformat=",.0f"
+                  data-restrict="Math.max(1, Math.min(30, v))" 
+                  data-scale="d3.scaleLinear().domain([0, 30])" 
+                  data-scaleformat=",.0f"
+                  data-readonly="0">
+                <div class="a-parameter-label">
+                  Looptijd
+<!--                   <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">De looptijd van de hypotheek in jaren</div> -->
+                </div>
+                <div class="a-parameter-sublabel">Jaar</div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="hypotheekvorm" 
+                  data-value="0.6" 
+                  data-valueformat=",.0%"
+                  data-restrict="Math.max(0, Math.min(1.0, v))" 
+                  data-scale="d3.scaleLinear().domain([0, 1])" 
+                  data-scaleformat=",.0%"
+                  data-readonly="0">
+                <div class="a-parameter-label">
+                  Hypotheekvorm
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Het deel van de hypotheek dat annuitair is</div>
+                </div>
+                <div class="a-parameter-sublabel">
+                  <span class="a-value annuity" data-value="v"></span> annuitair en <span class="a-value linear" data-value="1 - v"></span> lineair.
+                </div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="renteAnnuitair" 
+                  data-value="0.0345" 
+                  data-valueformat=",.2%"
+                  data-restrict="Math.max(0, Math.min(.08, (v > 1 ? v / 100 : v)))" 
+                  data-scale="d3.scaleLinear().domain([0, .08])" 
+                  data-scaleformat=",.0%"
+                  data-readonly="0">
+                <div class="a-parameter-label">
+                  <span class="a-text annuity">Annuitaire</span> rente
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Het rentepercentage voor het annuitaire deel van de hypotheek</div>
+                </div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="renteLineair" 
+                  data-value="0.0280" 
+                  data-valueformat=",.2%"
+                  data-restrict="Math.max(0, Math.min(.08, (v > 1 ? v / 100 : v)))" 
+                  data-scale="d3.scaleLinear().domain([0, .08])" 
+                  data-scaleformat=",.0%"
+                  data-readonly="0">
+                <div class="a-parameter-label">
+                  <span class="a-text linear">Lineaire</span> rente
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Het rentepercentage voor het linaire deel van de hypotheek</div>
+                </div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="ingangsdatum" 
+                  data-value="1" 
+                  data-valueformat=",.0f"
+                  data-restrict="Math.max(0, Math.min(12, v))" 
+                  data-scale="d3.scaleLinear().domain([0, 12])" 
+                  data-scaleformat=",.0f"
+                  data-readonly="0">
+                <div class="a-parameter-label">
+                  Ingangsdatum
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Over hoeveel maanden gaat de hypotheek in?</div>
+                </div>
+                <div class="a-parameter-sublabel">
+                  Over <span class="a-value" data-value="v"></span> maand(en).
+                </div>
+              </label>
+
+            </div> <!-- parameters -->
+
+          </div> <!-- section -->
+
+
+
+          <div class="a-section">
+            <span class="a-section-title">Netto berekening</span>
+            <div class="a-section-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
+            </div>
+            <div class="parameters">
+
+  <!-- TODO: precision op 100 nauwkeurig -->
+              <label class="a-parameter" 
+                  data-parameter="woz" 
+                  data-value="2.5e5" 
+                  data-valueformat="$,.0f"
+                  data-restrict="Math.max(3e4, Math.min(1e6, (v < 1000 ? v * 1000 : v)))" 
+                  data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
+                  data-scaleformat="$,.0s"
+                  data-readonly=false>
+                <div class="a-parameter-label">
+                  Woningwaarde
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">De WOZ-waarde van de woning.</div>
+                </div>
+                <div class="a-parameter-sublabel">
+                  <span class="a-value hidden" 
+                    data-value="translate(v, 'eigenwoningforfait', 
+                      d3.scaleOrdinal([0,0.003,0.0045,0.0060,0.0075])
+                        .domain([12500,25000,50000,75000,1050000]));"></span>.
+                </div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="eigenwoningforfait" 
+                  data-value="0.0075" 
+                  data-valueformat=",.2%"
+                  data-restrict="Math.max(0, Math.min(.0075, (v > 1 ? v / 100 : v)))" 
+                  data-scale="d3.scaleLinear().domain([0, .0075])" 
+                  data-scaleformat=",.2%"
+                  data-readonly=true>
+                <div class="a-parameter-label">
+                  Eigenwoningforfait
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">????</div>
+                </div>
+              </label>
+
+<!-- meer dan
+
+niet meer dan
+
+-
+
+€ 12.500
+
+0%
+
+€ 12.500 - € 25.000
+
+0,30%
+
+€ 25.000 - € 50.000
+
+0,45%
+
+€ 50.000 - € 75.000
+
+0,60%
+
+€ 75.000 - € 1.050.000
+
+0,75% 
+-->
+
+
+              <label class="a-parameter" 
+                  data-parameter="belastingschijf" 
+                  data-value="3" 
+                  data-valueformat=",.0f"
+                  data-restrict="Math.max(1, Math.min(4, v))" 
+                  data-scale="d3.scaleLinear().domain([1, 4])" 
+                  data-scaleformat=",.0f"
+                  data-readonly="false">
+                <div class="a-parameter-label">
+                  Belastingschijf
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Belasting tarief tbv hypotheekrente aftrek.</div>
+                </div>
+                <div class="a-parameter-sublabel">
+                  <span class="a-value hidden" 
+                    data-value="translate(v, 'belasting', 
+                      d3.scaleOrdinal([0.3655,0.408,0.408,0.52])
+                        .domain([1,2,3,4]));"></span>
+                </div>
+              </label>
+
+              <label class="a-parameter" 
+                  data-parameter="belasting" 
+                  data-value="0.52" 
+                  data-valueformat=",.2%"
+                  data-restrict="Math.max(0.3655, Math.min(0.52, v))" 
+                  data-scale="d3.scaleLinear().domain([0.3655, 0.52])" 
+                  data-scaleformat=",.0%"
+                  data-readonly="true">
+                <div class="a-parameter-label">
+                  Belastingtarief
+                  <span class="a-parameter-help">?</span>
+                  <div class="a-parameter-label-tip">Belasting tarief tbv hypotheekrente aftrek.</div>
+                </div>
+              </label>
+
+
+
+<!-- Belastingschijf Loon (jaarbasis)  Loonbelasting
+schijf 1  € 0 t/m € 19.982  36,55%
+schijf 2  € 19.982 t/m € 33.791 40,80%
+schijf 3  € 33.791 t/m € 67.072 40,80%
+schijf 4  € 67.072 of meer  52,00% -->
+
+            </div>
+          </div> <!-- section -->
+
+
+
+          <div class="a-section">
+            <span class="a-section-title">Methodiek</span>
+            <div class="a-section-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
+
+                Voor de berekeningen op deze site is gebruik gemaakt van de formules van wikipedia (link) en de belastingdienst.
+              </p>
+              <h6>Belastingtarieven</h6>
+              <p>
+                Voor het bepalen van de belastingtarieven is gebruik gemaakt van de <a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/overzicht_tarieven_en_schijven/u-hebt-in-2017-de-aow-leeftijd-nog-niet-bereikt" target="_blank">tarieven</a> van de belastingdienst zoals die gelden in 2017. Er vanuitgaande dat u de AOW leeftijd nog niet heeft bereikt. In andere gevallen gelden andere tarieven.
+              </p>
+              <h6>Eigenwoningforfait</h6>
+              <p>
+                Het eigenwoningforfait wordt opgeteld bij uw inkomen (link). De waarde hiervan is afhankelijk van de WOZ-waarde van uw woning. Voor het berekenen van het eigenwoningforfait is gebruik gemaakt van de <a href="https://www.belastingdienst.nl" target="_blank">tarieven</a> van de belastingdienst. Deze gelden voor de jaren 2015, 2016 en 2017.
+                <br>
+                De berekening van het eigenwoningforfait vind u <a href="">hier</a>.
+              </p>
+            </div>
+          </div> <!-- section -->
+
+
+          <div class="a-section">
+            <span class="a-section-title">Over</span>
+            <div class="a-section-content">
+              <p>
+                Ontwerp en realisatie door nl-hugo.<br>
+              </p>
+              <p>
+                Deze pagina is gebaseerd op de Buy or rent <a href="https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html?_r=0" target="_blank">calculator</a> die in 2014 is gepubliceerd door de NY Times.
+              </p>
+              <strong>disclaimer</strong>
+              Aan dee berekeningen op deze pagina kunnen geen rechten worden ontleend. Neem voor een gedetailleerde berekening contact op met uw financieel adviseur. 
+              </p>
+
+
+            </div>
+          </div> <!-- section -->
+
+        </div> <!-- col -->
+
+
+        <div class="col-xs-12 col-md-6">
+          <div class="a-section">
+            <div class="a-section-result">
+              <svg id="the-chart" width="445" height="250"></svg>
+            </div>
+          </div>
+          <div class="a-section">
+            <div class="a-section-result">
+              
+<!--               Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning:
+ -->
+              <table class="table">
+  <!--               <thead>
+                  <tr>
+                    <th>#</th>
+                    <th class="text-right">First Name</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td class="text-right">Maandelijks</td>
+                    <td class="text-right">Totaal</td>
+                  </tr>
+                  <tr class="interest">
+                    <td>Rente</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr class="amortization">
+                    <td>Aflossing</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr>
+                    <th>Bruto</td>
+                    <th class="metric text-right" data-value="d3.mean(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                    <th class="metric text-right" data-value="d3.sum(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                  </tr>
+                  <tr class="tax-returns">
+                    <td>Hypotheekrente aftrek</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr>
+                    <td>Eigenwoningforfait</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
+                  </tr>
+<!--                   <tr>
+                    <td>Netto</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></td>
+                  </tr> -->
+                  <tr>
+                    <td>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning netto</td>
+                    <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                    <th class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+
+            </div>
+          </div>
+        </div> <!-- col -->
+
+
+      </div> <!-- row -->
+
+
+
+    </div> <!-- container -->
+
+  <script type="text/javascript" src="js/vendor.bundle.js"></script><script type="text/javascript" src="js/main.bundle.js"></script></body>
+</html>

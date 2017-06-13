@@ -1,0 +1,76 @@
+{
+  "bootstrapVersion": 4,
+
+  "useFlexbox": true,
+
+  "extractStyles": false,
+
+  "styleLoaders": [
+    "style-loader",
+    "css-loader",
+    "postcss-loader",
+    "sass-loader"
+  ],
+
+  scripts: {
+    "alert": false,
+    "button": true,
+    "carousel": false,
+    "collapse": true,
+    "dropdown": true,
+    "modal": false,
+    "popover": false,
+    "scrollspy": true,
+    "tab": false,
+    //"tooltip": true,
+    "util": true
+  },
+
+  styles: {
+    // Mixins
+    mixins: true,
+
+    // Reset and dependencies
+    normalize: true,
+    print: true,
+
+    // Core CSS
+    reboot: true,
+    type: true,
+    images: true,
+    code: true,
+    grid: true,
+    tables: true,
+    forms: false,
+    buttons: true,
+
+    // Components
+    badge: true,
+    dropdown: true,
+    "button-group": true,
+    "input-group": true,
+    "custom-forms": true,
+    nav: true,
+    navbar: true,
+    card: true,
+    breadcrumb: true,
+    pagination: false,
+    jumbotron: true,
+    alert: false,
+    progress: false,
+    media: true,
+    "list-group": true,
+    "responsive-embed": false,
+    close: true,
+
+    // Components w/ JavaScript
+    modal: false,
+    tooltip: true,
+    popover: false,
+    carousel: false,
+
+    // Utility classes
+    transitions: false,
+    utilities: true
+  }
+}

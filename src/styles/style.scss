@@ -1,0 +1,53 @@
+/* src/style.scss */
+$annuity: #7bccc4;
+$linear: #2b8cbe;
+$amortization: #706677;
+$interest: #cec6b9;
+
+@import 'parameter';
+@import 'section';
+@import 'chart';
+@import 'table';
+@import 'mixins';
+
+/*font-family: 'Montserrat', sans-serif;*/
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../fonts/montserrat-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/montserrat-v10-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v10-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #333;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+@include generate-elements("annuity", $annuity);
+@include generate-elements("linear", $linear);
+@include generate-elements("amortization", $amortization);
+@include generate-elements("interest", $interest);
+@include generate-elements("nett", "#ccc");
+
+
+$grid-gutter-width-base:     50px !default;

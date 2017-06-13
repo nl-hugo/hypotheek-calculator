@@ -1,0 +1,49 @@
+
+.axis--y line,
+.axis--x line {
+  stroke: white;
+  shape-rendering: crispEdges;
+  /*stroke-width: 0.8px;*/
+}
+
+
+.axis text {
+  font-size: 0.9em;
+  fill: #999;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke-width: 2px;
+/*  stroke: steelblue;*/
+}
+
+.focus text {
+  font-size: 0.75em;
+  fill: #999;
+}
+
+.focus line {
+  stroke: white;
+  shape-rendering: crispEdges;
+  stroke-dasharray: 2,2;
+}
+
+.layer path.line {
+  fill: none;
+  stroke-width: 1.4px;
+}
+
+.layer path.area {
+  opacity: 0.5;
+}
+
+.nett-line {
+  fill: none;
+  stroke: green;
+}

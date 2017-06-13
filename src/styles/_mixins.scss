@@ -1,0 +1,9 @@
+
+
+@mixin generate-elements($class, $color) {
+  .#{$class} {
+    fill: $color;
+    color: $color;
+    stroke: $color;
+  }
+}
