@@ -1,1 +1,1 @@
-export * from "./calc-icon.png";
+export * from "./mortgage-icon.png";
