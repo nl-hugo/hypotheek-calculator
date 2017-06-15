@@ -56,8 +56,10 @@ body {
 
 .jumbotron {
   background-color: #e7e3dc;
-/*  text-align: center;*/
 }
 
-/*$grid-gutter-width-base:     50px !default;
-*/
+footer {
+  border-top: .05rem solid #e7e3dc;
+  padding-top: 1.2em;
+  font-size: 0.8em;
+}
