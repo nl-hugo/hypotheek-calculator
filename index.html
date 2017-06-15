@@ -8,28 +8,27 @@
   <link rel="shortcut icon" href="favicon.ico"></head>
   <body>
 
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
-      <a class="navbar-brand" href="#"><img src="images/calc-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    test</a>
-    </nav>
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Test</h1>
-        <p>Bereken maandlasten</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-      </div>
-    </div>
-
     <div class="container">
 
+      <div class="header clearfix">
+        <nav class="navbar navbar-light">
+          <a class="navbar-brand" href="#"><img src="images/mortgage-icon.png" width="24" height="24" class="d-inline-block align-top" alt=""> <strong>Hypotheek</strong> calculator</a>
+        </nav>
+      </div>
 
-
+      <div class="jumbotron">
+        <h1 class="text-white">Bereken uw maandlasten</h1>
+          <p class="lead text-muted">
+            Benieuwd wat uw hypotheek u gaat kosten? Bereken nu uw (netto) maandlasten.<br>
+            <br>
+            <a class="btn btn-secondary btn-md" href="#woning" role="button">Start »</a>
+          </p>
+      </div>
 
       <div class="row">
         <div class="col-xs-12 col-md-6">
 
-          <div class="a-section">
+          <div class="a-section" id="woning">
             <span class="a-section-title">Woning</span>
             <div class="a-section-content">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
@@ -303,7 +302,7 @@ schijf 4  € 67.072 of meer  52,00% -->
                 <br>
                 De calculator is gebouwd met behulp van <a href="https://d3js.org/">D3.js</a>. De vele voorbeelden die de auteur van deze JavaScript-bibliotheek heeft <a href="https://bl.ocks.org/mbostock">gepubliceerd</a> waren erg waardevol bij de ontwikkeling van deze calculator.<br>
                 <br>
-                Het icon komt van <a href="https://www.iconfinder.com/icons/269996/loan_mortgage_calculator_real_estate_icon">iconfinder</a>.
+                Het icoon is afkomstig van <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> van <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
               </p>
 
             </div>
@@ -379,8 +378,8 @@ schijf 4  € 67.072 of meer  52,00% -->
                   </tr> -->
                   <tr class="nett">
                     <td>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning netto</td>
-                    <th><span class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></span></th>
-                    <th><span class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></span></th>
+                    <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                    <th class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
                   </tr>
                 </tbody>
               </table>
