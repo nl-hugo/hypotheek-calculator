@@ -31,7 +31,7 @@ export default function slider(label, callback, x, width, height, margin) {
       .call(d3.drag()
           .on("start.interrupt", function() { slider.interrupt(); })
           .on("start drag", () =>
-            callback(label, x.invert(d3.event.x))
+            eval(label.dataset.readonly) ? null : callback(label, x.invert(d3.event.x))
           ));
 
   slider.insert("g", ".track-overlay")
