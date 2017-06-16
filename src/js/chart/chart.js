@@ -27,7 +27,7 @@ const bisectDate = d3.bisector((d) => d.date).left;
 
 export function init(selector) {
   const svg = d3.select(selector),
-    margin = {top: 20, right: 40, bottom: 30, left: 5},
+    margin = {top: 20, right: 12, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom;
 
@@ -48,7 +48,7 @@ export function init(selector) {
       .attr("class", "axis axis--x");
 
   gAxis.append("g")
-      .attr("transform", "translate(" + width + ",0)")
+      // .attr("transform", "translate(" + width + ",0)")
       .attr("class", "axis axis--y");
 
   focus = gAxis.append("g")
@@ -78,15 +78,11 @@ export function init(selector) {
 }
 
 export function update(_data) {
-  // console.log("update");
   data = _data;
   // console.log(data);
 
   y.domain([0, d3.max(data, d => d.payment)]);
-  // x.domain([0, data.length]);
   x.domain(d3.extent(data, d => d.date));
-
-  // stack.keys(keys);
 
   const layers = g.selectAll(".layer")
     .data(d3.stack().keys(keys)(data));
@@ -113,7 +109,7 @@ export function update(_data) {
       .call(d3.axisBottom(x).ticks(d3.timeYear.every(5)));
 
   gAxis.selectAll(".axis--y")
-      .call(d3.axisRight(y)
+      .call(d3.axisLeft(y)
         .ticks(2, "$,.0f")
         .tickSize(-x.range()[1]));
 }
