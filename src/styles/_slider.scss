@@ -23,7 +23,7 @@
 }
 
 .track {
-  stroke: #000;
+  stroke: black;
   stroke-opacity: 0.3;
   stroke-width: 10px;
 }
@@ -41,13 +41,13 @@
 }
 
 .handle {
-  fill: #fff;
-  stroke: #000;
+  fill: white;
+  stroke: black;
   stroke-opacity: 0.5;
   stroke-width: 1.25px;
 }
 
 .slider text {
   font-size: 0.7em;
-  fill: #999;
+  fill: gray-lightest;
 }

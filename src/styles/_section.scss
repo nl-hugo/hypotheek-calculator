@@ -6,24 +6,20 @@
 .a-section-title {
   font-size: 1.7em;
   line-height: 2.0em;
-/*  font-weight: 700;*/
-/*  letter-spacing: 1.2px;*/
-/*  text-transform: uppercase;*/
 }
 
 .a-section-content {
   line-height: 1.7em;
 }
 
-
 .a-section-result {
-/*  line-height: 1.5em;*/
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .disclaimer {
-  font-size: 0.8em;
-  text-transform: uppercase;;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: $gray-light;
 }
 
 h6 {

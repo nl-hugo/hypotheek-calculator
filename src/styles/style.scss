@@ -1,14 +1,11 @@
 /* src/style.scss */
-$annuity: #7bccc4;
-$linear: #2b8cbe;
-$amortization: #706677;
-$interest: #cec6b9;
 
+@import 'variables';
 @import 'parameter';
-@import 'section';
 @import 'chart';
 @import 'table';
 @import 'mixins';
+@import 'section';
 
 /*font-family: 'Montserrat', sans-serif;*/
 /* montserrat-regular - latin */
@@ -38,7 +35,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: #333;
+  color: $gray-dark;
   margin-top: 60px;
   margin-bottom: 60px;
 }
@@ -47,7 +44,7 @@ body {
 @include generate-elements("linear", $linear);
 @include generate-elements("amortization", $amortization);
 @include generate-elements("interest", $interest);
-@include generate-elements("nett", "#ccc");
+@include generate-elements("nett", $gray-light);
 
 
 .navbar-brand {
@@ -55,11 +52,32 @@ body {
 }
 
 .jumbotron {
-  background-color: #e7e3dc;
+  background-color: $secondary-color;
 }
 
 footer {
-  border-top: .05rem solid #e7e3dc;
+  border-top: .05rem solid $secondary-color;
   padding-top: 1.2em;
   font-size: 0.8em;
+}
+
+.top {
+  top: 0;
+  bottom: auto;
+  border-top: solid $gray-lightest;
+  border-width: 1px 0;
+  padding: 1em;
+  width: 100%;
+  max-width: 600px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
 }

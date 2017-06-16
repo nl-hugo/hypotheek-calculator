@@ -4,6 +4,8 @@
   "useFlexbox": true,
 
   "extractStyles": false,
+  
+  "preBootstrapCustomizations": "./src/styles/_config.scss",
 
   "styleLoaders": [
     "style-loader",
@@ -16,13 +18,13 @@
     "alert": false,
     "button": true,
     "carousel": false,
-    "collapse": true,
-    "dropdown": true,
+    "collapse": false,
+    "dropdown": false,
     "modal": false,
     "popover": false,
     "scrollspy": true,
     "tab": false,
-    //"tooltip": true,
+    "tooltip": false,
     "util": true
   },
 
@@ -45,21 +47,21 @@
     buttons: true,
 
     // Components
-    badge: true,
-    dropdown: true,
-    "button-group": true,
-    "input-group": true,
-    "custom-forms": true,
+    badge: false,
+    dropdown: false,
+    "button-group": false,
+    "input-group": false,
+    "custom-forms": false,
     nav: true,
     navbar: true,
-    card: true,
-    breadcrumb: true,
+    card: false,
+    breadcrumb: false,
     pagination: false,
     jumbotron: true,
     alert: false,
     progress: false,
     media: true,
-    "list-group": true,
+    "list-group": false,
     "responsive-embed": false,
     close: true,
 
