@@ -4,26 +4,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hypotheek calculator</title>
+    <title>tralalalals</title>
   <link rel="shortcut icon" href="favicon.ico"></head>
+  <style type="text/css">
+    #top-b, #bottom-b {
+      background-color: #0f0;
+      background-color: rgba(0,255,0,.6);
+    }
+    .top {
+        top: 0;
+        bottom: auto;
+    }
+    .top, .bottom {
+        text-align: center;
+        border: solid black;
+        border-width: 1px 0;
+        padding: 1em;
+        width: 100%;
+        max-width: 600px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .fixedsticky {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+    }
+  </style>
   <body>
 
     <div class="container">
 
-      <div class="header clearfix">
-        <nav class="navbar navbar-light">
-          <a class="navbar-brand" href="#"><img src="images/mortgage-icon.png" width="24" height="24" class="d-inline-block align-top" alt=""> <strong>Hypotheek</strong> calculator</a>
-        </nav>
-      </div>
-
-      <div class="jumbotron">
-        <h1 class="text-white">Bereken uw maandlasten</h1>
-          <p class="lead text-muted">
-            Benieuwd wat uw hypotheek u gaat kosten? Bereken nu uw (netto) maandlasten.<br>
-            <br>
-            <a class="btn btn-secondary btn-md" href="#woning" role="button">Start »</a>
-          </p>
-      </div>
 
       <div class="row">
         <div class="col-xs-12 col-md-6">
@@ -308,6 +322,17 @@ schijf 4  € 67.072 of meer  52,00% -->
             </div>
           </div> <!-- section -->
 
+          <div class="a-section">
+<!--             <span class="a-section-title">Disclaimer</span> -->
+            <div class="a-section-content">
+              <p class="disclaimer">
+                <strong>Disclaimer</strong><br>
+                Hoewel de informatie op deze pagina met de grootst mogelijk zorg is samengesteld, aanvaardt de maker geen enkele aansprakelijkheid ten aanzien van directe, indirecte, bijzondere, incidentele, immateri&euml;le of gevolgschade. De informatie op deze pagina is slechts indicatief en niet bedoeld als professioneel financieel advies. Neem voor een persoonlijk advies contact op met uw financieel adviseur. 
+              </p>
+
+            </div>
+          </div> <!-- section -->
+
         </div> <!-- col -->
 
 
@@ -315,69 +340,76 @@ schijf 4  € 67.072 of meer  52,00% -->
 
           <div class="fixedsticky top">
 
-            <div class="a-section">
-              <div class="a-section-result">
-                <svg id="the-chart" width="404" height="250"></svg>
-              </div>
-            </div> <!--section -->
+          <div class="a-section">
+            <div class="a-section-result">
+              <svg id="the-chart" width="445" height="250"></svg>
+            </div>
+          </div>
+          <div class="a-section">
+            <div class="a-section-result">
+              
+<!--               Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning:
+ -->
+              <table class="table">
+  <!--               <thead>
+                  <tr>
+                    <th>#</th>
+                    <th class="text-right">First Name</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td class="text-right">Maandelijks</td>
+                    <td class="text-right">Totaal</td>
+                  </tr>
+                  <tr class="interest">
+                    <td>Rente</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr class="amortization">
+                    <td>Aflossing</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr>
+                    <th>Bruto</td>
+                    <th class="metric text-right" data-value="d3.mean(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                    <th class="metric text-right" data-value="d3.sum(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                  </tr>
+                  <tr class="tax-returns">
+                    <td>Hypotheekrente aftrek</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
+                  </tr>
+                  <tr>
+                    <td>Eigenwoningforfait</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
+                  </tr>
+<!--                   <tr>
+                    <td>Netto</td>
+                    <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></td>
+                    <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></td>
+                  </tr> -->
+                  <tr class="nett">
+                    <td>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning netto</td>
+                    <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                    <th class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                  </tr>
+                </tbody>
+              </table>
 
-            <div class="a-section">
-              <div class="a-section-result">
 
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td class="text-right">Maandelijks</td>
-                      <td class="text-right">Totaal</td>
-                    </tr>
-                    <tr class="interest">
-                      <td>Rente</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
-                      <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
-                    </tr>
-                    <tr class="amortization">
-                      <td>Aflossing</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
-                      <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
-                    </tr>
-                    <tr>
-                      <th>Bruto</td>
-                      <th class="metric text-right" data-value="d3.mean(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
-                      <th class="metric text-right" data-value="d3.sum(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
-                    </tr>
-                    <tr class="tax-returns">
-                      <td>Hypotheekrente aftrek</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
-                      <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
-                    </tr>
-                    <tr>
-                      <td>Eigenwoningforfait</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
-                      <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
-                    </tr>
-                    <tr class="nett">
-                      <td>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning netto</td>
-                      <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
-                      <th class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
-                    </tr>
-                  </tbody>
-                </table>
 
-              </div>
-            </div>  <!--section -->
 
-            <div class="a-section">
-              <div class="a-section-content">
-                <p class="disclaimer">
-                  <strong>Disclaimer:</strong> Hoewel de informatie op deze pagina met de grootst mogelijk zorg is samengesteld, aanvaardt de maker geen enkele aansprakelijkheid ten aanzien van directe, indirecte, bijzondere, incidentele, immateri&euml;le of gevolgschade. De informatie op deze pagina is slechts indicatief en niet bedoeld als professioneel financieel advies. Neem voor een persoonlijk advies contact op met uw financieel adviseur. 
-                </p>
-
-              </div>
-            </div> <!-- section -->
-
-          </div> <!-- fixedsticky -->
+            </div>
+          </div>
+          </div>
         </div> <!-- col -->
+
+
       </div> <!-- row -->
 
 
