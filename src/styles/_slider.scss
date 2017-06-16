@@ -2,14 +2,11 @@
  * _slider.scss
  */
 
-
-
 .axis {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
-
 
 .axis .domain {
   fill: none;
@@ -49,5 +46,5 @@
 
 .slider text {
   font-size: 0.7em;
-  fill: gray-lightest;
+  fill: darkgray;
 }

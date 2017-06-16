@@ -8,9 +8,12 @@ export default function slider(label, callback, x, width, height, margin) {
     .append("div")
       .attr("class", "a-parameter-slider");
 
+  const readonly = eval(label.dataset.readonly);
+
   const svg = div.append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      .style("opacity", () => readonly ? 0.6 : 1.0)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -31,7 +34,7 @@ export default function slider(label, callback, x, width, height, margin) {
       .call(d3.drag()
           .on("start.interrupt", function() { slider.interrupt(); })
           .on("start drag", () =>
-            eval(label.dataset.readonly) ? null : callback(label, x.invert(d3.event.x))
+            readonly ? null : callback(label, x.invert(d3.event.x))
           ));
 
   slider.insert("g", ".track-overlay")

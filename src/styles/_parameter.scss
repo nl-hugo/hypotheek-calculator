@@ -35,13 +35,13 @@
 }
 
 .a-parameter-label {
-  color: $gray-light;
+  color: slategray;
   bottom: 28px;
 }
 
 .a-parameter-sublabel {
   font-size: 0.75em;
-  color: $gray-lighter;
+  color: silver;
   bottom: 10px;
 }
 
@@ -69,7 +69,7 @@
 .a-parameter-help {
   display: inline-block;
   color: white;
-  background: $gray-lightest;
+  background: silver;
   border-radius: 13px;
   height: 13px;
   width: 13px;

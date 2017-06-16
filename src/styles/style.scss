@@ -35,7 +35,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: $gray-dark;
+  color: darkslategray;
   margin-top: 60px;
   margin-bottom: 60px;
 }
@@ -44,15 +44,14 @@ body {
 @include generate-elements("linear", $linear);
 @include generate-elements("amortization", $amortization);
 @include generate-elements("interest", $interest);
-@include generate-elements("nett", $gray-light);
-
+@include generate-elements("nett", "silver");
 
 .navbar-brand {
   text-transform: uppercase;
 }
 
 .jumbotron {
-  background-color: $secondary-color;
+  background-color: $primary-color;
 }
 
 footer {
@@ -64,8 +63,8 @@ footer {
 .top {
   top: 0;
   bottom: auto;
-  border-top: solid $gray-lightest;
-  border-width: 1px 0;
+/*  border-top: solid silver;*/
+/*  border-width: 1px 0;*/
   padding: 1em;
   width: 100%;
   max-width: 600px;

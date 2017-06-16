@@ -3,13 +3,11 @@
 .axis--x line {
   stroke: white;
   shape-rendering: crispEdges;
-  /*stroke-width: 0.8px;*/
 }
-
 
 .axis text {
   font-size: 0.9em;
-  fill: #999;
+  fill: silver;
 }
 
 .overlay {
@@ -20,12 +18,11 @@
 .focus circle {
   fill: none;
   stroke-width: 2px;
-/*  stroke: steelblue;*/
 }
 
 .focus text {
-  font-size: 0.75em;
-  fill: #999;
+  font-size: 0.85em;
+  fill: silver;
 }
 
 .focus line {

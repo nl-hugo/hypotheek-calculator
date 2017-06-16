@@ -15,9 +15,11 @@ x format axis vs waarde
 - handmatige invoer percentages
 x align: idx0 = maand 1!!
 x datum ipv idx??
-- ewff automatisch bepalen en disabelen voor invoer 
+x ewff automatisch bepalen en disabelen voor invoer 
 x vaste belasting %
 - ewff wordt nog niet goed bepaald middels scale?
+- smaller maken zorgt voor overlap input en slider
+
 
 -- chart
 x mouseover chart
