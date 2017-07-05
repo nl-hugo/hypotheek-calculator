@@ -41,8 +41,9 @@ Known issues:
 - manual input of interest rates should accept e.g. 3.5 instead of 0.035
 - linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
 - overlap of input and slider on smaller screen sizes
-- chart should appear at the top on smaller screen sizes, not on the bottom
+[x] chart should appear at the top on smaller screen sizes, not on the bottom
 - reset button should be on top of the input field
+- dynamic chart size?
 
 
 
