@@ -1,70 +1,55 @@
 # Hypotheek calculator
 
+Computes monthly payments for a Dutch mortgage loan. 
+
+![thumbnail](thumbnail.png)
 
 
-
-# TODO
-
--- UI
-
-- reset knop positie
-- verbergen lin initieel
-x format axis vs waarde
-- afronden hypo bedrag op 100 eur
-- afronden rentes op 0,05
-- handmatige invoer percentages
-x align: idx0 = maand 1!!
-x datum ipv idx??
-x ewff automatisch bepalen en disabelen voor invoer 
-x vaste belasting %
-- ewff wordt nog niet goed bepaald middels scale?
-- smaller maken zorgt voor overlap input en slider
-
-
--- chart
-x mouseover chart
-- line toevoegen
-- mouseover splitsen in interest en amortization
-
-
-
--- model
-
-- netto berekening
--x woz
--x belasting%
--- tussentijds aflossen
--- meerdere opvolgende 
--x eigenwoning ff
--- klopt nog niet!!
-
-- duration default 1
-
-
-
-- validatie
--- validatie mortgage params
--- (unit) tests
+See it in action [here](https://nl-hugo.github.io/mortgage-calculator/).
 
 
 ### Usage
 
 To install:
+
 ```npm install```
 
+
 To start in dev-mode:
+
 ```npm start```
 
+
 To build:
+
 ```npm run build```
 
 
 To deploy (after commit):
+
 ```npm run deploy```
+
+
+
+### TODO
+
+Known issues:
+
+- round hypotheekbedrag and woz to 500 precision
+- round interest to 0.05% precision
+- round hypotheekvorm to 10% precision
+- manual input of interest rates should accept e.g. 3.5 instead of 0.035
+- linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
+- overlap of input and slider on smaller screen sizes
+- chart should appear at the top on smaller screen sizes, not on the bottom
+- reset button should be on top of the input field
+
 
 
 ### Resources
 
--- icon https://www.iconfinder.com/icons/269996/loan_mortgage_calculator_real_estate_icon
+Inspired by the [buy-or-rent calculator](https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html?_r=0), published by the New York Times in 2014. 
 
--- bisect mouseover: https://bl.ocks.org/mbostock/3902569
+Build on [D3.js](https://d3js.org/). The author's many [examples](https://bl.ocks.org/mbostock) proved a valuable resource. Amongst others: [bisect mouseover](https://bl.ocks.org/mbostock/3902569).
+
+The icon is created by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver) and published on [Flaticon](http://www.flaticon.com)and licenced by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
