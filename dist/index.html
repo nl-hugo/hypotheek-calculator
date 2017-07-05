@@ -33,7 +33,11 @@
 
           <div class="fixedsticky top">
 
+
             <div class="a-section">
+              <p>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van de woning</p>
+
+
               <div class="a-section-result">
                 <svg id="the-chart" width="404" height="250"></svg>
               </div>
@@ -42,42 +46,45 @@
             <div class="a-section">
               <div class="a-section-result">
 
-                <table class="table">
+                <table class="table table-sm">
                   <tbody>
                     <tr>
-                      <td></td>
-                      <td class="text-right">Maandelijks</td>
+                      <td>&nbsp;</td>
                       <td class="text-right">Totaal</td>
+                      <td class="text-right">Gem. per maand</td>
                     </tr>
                     <tr class="interest">
                       <td>Rente</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
                       <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
+                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.interest; })" data-valueformat="$,.0f"></td>
                     </tr>
                     <tr class="amortization">
                       <td>Aflossing</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
                       <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
+                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.amortization; })" data-valueformat="$,.0f"></td>
                     </tr>
                     <tr>
-                      <th>Bruto</td>
-                      <th class="metric text-right" data-value="d3.mean(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                      <th>Bruto</th>
                       <th class="metric text-right" data-value="d3.sum(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                      <th class="metric text-right" data-value="d3.mean(v, function(d) { return +d.payment; })" data-valueformat="$,.0f"></th>
+                    </tr>
+                    <tr>
+                      <td colspan="3">&nbsp;</td>
                     </tr>
                     <tr class="tax-returns">
                       <td>Hypotheekrente aftrek</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
                       <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
+                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.taxreturns; })" data-valueformat="$,.0f"></td>
                     </tr>
                     <tr>
                       <td>Eigenwoningforfait</td>
-                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
                       <td class="metric text-right" data-value="d3.sum(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
+                      <td class="metric text-right" data-value="d3.mean(v, function(d) { return +d.forfait; })" data-valueformat="$,.0f"></td>
                     </tr>
                     <tr class="nett">
-                      <td>Na <strong><span class="metric" data-value="(d3.max(v, function(d) { return +d.id; }) + 1) / 12" data-valueformat=",.0f"></span></strong> jaar betaalde je voor de financiering van je woning netto</td>
-                      <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                      <th>Netto</th>
                       <th class="metric text-right nett" data-value="d3.sum(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
+                      <th class="metric text-right nett" data-value="d3.mean(v, function(d) { return +d.nett; })" data-valueformat="$,.0f"></th>
                     </tr>
                   </tbody>
                 </table>
