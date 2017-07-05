@@ -4,16 +4,12 @@ let data, focus, g, gAxis, x, y;
 
 const keys = ["amortization", "interest"];
 
-// const stack = d3.stack();
-
 const area = d3.area()
-  // .x(d => x(d.data.id))
     .x(d => x(d.data.date))
     .y0(d => y(d[0]))
     .y1(d => y(d[1]));
 
 const line = d3.line()
-    // .x(d => x(d.data.id))
     .x(d => x(d.data.date))
     .y(d => y(d[1]));
 
@@ -21,8 +17,6 @@ const netline = d3.line()
     .x(d => x(d.date))
     .y(d => y(d.nett));
 
-
-// const bisectDate = d3.bisector((d) => d.id).left;
 const bisectDate = d3.bisector((d) => d.date).left;
 
 export function init(selector) {
@@ -35,7 +29,6 @@ export function init(selector) {
         .attr("class", "a-chart")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // x = d3.scaleLinear().range([0, width]);
   x = d3.scaleTime().range([0, width]);
   y = d3.scaleLinear().range([height, 0]);
 
@@ -48,7 +41,6 @@ export function init(selector) {
       .attr("class", "axis axis--x");
 
   gAxis.append("g")
-      // .attr("transform", "translate(" + width + ",0)")
       .attr("class", "axis axis--y");
 
   focus = gAxis.append("g")
@@ -65,7 +57,7 @@ export function init(selector) {
       .attr("y2", height);
 
   focus.append("text")
-      .attr("x", 9)
+      .attr("y", -10)
       .attr("dy", ".35em");
 
   gAxis.append("rect")

@@ -31,7 +31,7 @@
           <div class="a-section" id="woning">
             <span class="a-section-title">Woning</span>
             <div class="a-section-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
+              In Nederland wordt de hoogte van het hypotheekbedrag voor de aankoop van een woning in stappen teruggebracht tot 100% van de woningwaarde. Geef hieronder het aankoopbedrag van de woning aan, of, als dit afwijkt, de hoogte van het te lenen bedrag.
             </div>
             <div class="parameters">
   <!-- TODO: precision op 100 nauwkeurig -->
@@ -71,8 +71,6 @@
                   data-readonly="0">
                 <div class="a-parameter-label">
                   Looptijd
-<!--                   <span class="a-parameter-help">?</span>
-                  <div class="a-parameter-label-tip">De looptijd van de hypotheek in jaren</div> -->
                 </div>
                 <div class="a-parameter-sublabel">Jaar</div>
               </label>
@@ -81,8 +79,8 @@
                   data-parameter="hypotheekvorm" 
                   data-value="0.6" 
                   data-valueformat=",.0%"
-                  data-restrict="Math.max(0, Math.min(1.0, v))" 
-                  data-scale="d3.scaleLinear().domain([0, 1])" 
+                  data-restrict="Math.max(-0.0001, Math.min(1.0001, v))" 
+                  data-scale="d3.scaleLinear().domain([0, 1]).clamp(true)" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
                 <div class="a-parameter-label">
@@ -121,7 +119,7 @@
                 <div class="a-parameter-label">
                   <span class="a-text linear">Lineaire</span> rente
                   <span class="a-parameter-help">?</span>
-                  <div class="a-parameter-label-tip">Het rentepercentage voor het linaire deel van de hypotheek</div>
+                  <div class="a-parameter-label-tip">Het rentepercentage voor het lineaire deel van de hypotheek</div>
                 </div>
               </label>
 
@@ -148,11 +146,10 @@
           </div> <!-- section -->
 
 
-
           <div class="a-section">
             <span class="a-section-title">Netto berekening</span>
             <div class="a-section-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel magna sit amet felis congue blandit a non massa. Sed eleifend nulla ex, id bibendum lacus tincidunt id.
+              Voor het berekenen van de netto maandlasten wordt het eigenwoningforfait bij het bruto bedrag opgeteld en wordt de hypotheekrenteaftrek daar weer vanaf getrokken. Hiervoor zijn de WOZ-waarde van de woning en de toepasbare belastingschijf van belang.
             </div>
             <div class="parameters">
 
@@ -166,7 +163,7 @@
                   data-scaleformat="$,.0s"
                   data-readonly=false>
                 <div class="a-parameter-label">
-                  Woningwaarde
+                  WOZ-waarde
                   <span class="a-parameter-help">?</span>
                   <div class="a-parameter-label-tip">De WOZ-waarde van de woning.</div>
                 </div>
@@ -189,37 +186,9 @@
                 <div class="a-parameter-label">
                   Eigenwoningforfait
                   <span class="a-parameter-help">?</span>
-                  <div class="a-parameter-label-tip">????</div>
+                  <div class="a-parameter-label-tip">Het percentage van de WOZ-waarde dat de belastingdienst zit als inkomsten uit eigen woning.</div>
                 </div>
               </label>
-
-<!-- meer dan
-
-niet meer dan
-
--
-
-€ 12.500
-
-0%
-
-€ 12.500 - € 25.000
-
-0,30%
-
-€ 25.000 - € 50.000
-
-0,45%
-
-€ 50.000 - € 75.000
-
-0,60%
-
-€ 75.000 - € 1.050.000
-
-0,75% 
--->
-
 
               <label class="a-parameter" 
                   data-parameter="belastingschijf" 
@@ -232,7 +201,7 @@ niet meer dan
                 <div class="a-parameter-label">
                   Belastingschijf
                   <span class="a-parameter-help">?</span>
-                  <div class="a-parameter-label-tip">Belasting tarief tbv hypotheekrente aftrek.</div>
+                  <div class="a-parameter-label-tip">De belastingschijf die van toepassing is op de hypotheekrenteaftrek.</div>
                 </div>
                 <div class="a-parameter-sublabel">
                   <span class="a-value hidden" 
@@ -253,7 +222,7 @@ niet meer dan
                 <div class="a-parameter-label">
                   Belastingtarief
                   <span class="a-parameter-help">?</span>
-                  <div class="a-parameter-label-tip">Belasting tarief tbv hypotheekrente aftrek.</div>
+                  <div class="a-parameter-label-tip">Het belastingtarief dat hoort bij de gekozen belastingschijf.</div>
                 </div>
               </label>
 
@@ -274,7 +243,7 @@ schijf 4  € 67.072 of meer  52,00% -->
             <span class="a-section-title">Methodiek</span>
             <div class="a-section-content">
               <p>
-                Voor de bruto berekeningen op deze site is gebruik gemaakt van algemene financi&euml;le <a href="https://en.wikipedia.org/wiki/Mortgage_calculator">formules</a>. Wikipedia biedt meer informatie over de overeenkomsten en verschillen tussen <a class="annuity" href="https://nl.wikipedia.org/wiki/Annu%C3%AFteitenhypotheek">annuitaire</a> en <a class="lineair" href="https://nl.wikipedia.org/wiki/Lineaire_lening">lineaire</a> leningen. <br>
+                Voor de bruto berekeningen op deze site is gebruik gemaakt van algemene financi&euml;le <a href="https://en.wikipedia.org/wiki/Mortgage_calculator">formules</a>. Wikipedia biedt meer informatie over de overeenkomsten en verschillen tussen <a class="annuity" href="https://nl.wikipedia.org/wiki/Annu%C3%AFteitenhypotheek">annuitaire</a> en <a class="linear" href="https://nl.wikipedia.org/wiki/Lineaire_lening">lineaire</a> leningen. <br>
                 <br>
                 Voor de netto berekening is gebruik gemaakt van de informatie op de site van de <a href="https://www.belastingdienst.nl/wps/wcm/connect/nl/koopwoning/koopwoning">belastingdienst</a>. Omdat de regelgeving rondom hypotheken nogal wat uitzonderingen en bijzonderheden kent, zijn een aantal aannames gedaan ter vereenvoudiging van de berekening. Er wordt gerekend met de tarieven van 2017. 
               </p>
@@ -302,7 +271,7 @@ schijf 4  € 67.072 of meer  52,00% -->
                 <br>
                 De calculator is gebouwd met behulp van <a href="https://d3js.org/">D3.js</a>. De vele voorbeelden die de auteur van deze JavaScript-bibliotheek heeft <a href="https://bl.ocks.org/mbostock">gepubliceerd</a> waren erg waardevol bij de ontwikkeling van deze calculator.<br>
                 <br>
-                Het icoon is afkomstig van <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> van <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
+                Het icoon is afkomstig van <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> van <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> onder licentie <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
               </p>
 
             </div>
