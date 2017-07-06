@@ -25,7 +25,7 @@ export function init(label, callback) {
 
 function setChanged(label, value) {
 
-  // console.log("update " + " = " + value);
+  // console.log("raw update = " + value);
   // console.log(label);
 
   const data = label.dataset;
@@ -37,6 +37,10 @@ function setChanged(label, value) {
   const x = eval(data.scale).range([margin.left, width]);
 
   let v = value, modified = true;
+
+  // swap . and , for internationalization
+  v = (v + "").replace(/[,.]/g, m => m === "," ? "." : ",");
+
   if (!v || isNaN(v)) {
     v = data.value;
     modified = false;

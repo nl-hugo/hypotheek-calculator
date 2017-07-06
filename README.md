@@ -41,7 +41,7 @@ Known issues:
 
 - [x] round hypotheekvorm to 5% precision
 
-- [ ] manual input of interest rates should accept e.g. 3.5 instead of 0.035
+- [x] manual input of interest rates should accept e.g. 3.5 instead of 0.035
 
 - [x] chart should appear at the top on smaller screen sizes, not on the bottom
 

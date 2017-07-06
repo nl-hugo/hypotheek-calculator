@@ -150,7 +150,7 @@
                   data-parameter="hypotheekvorm" 
                   data-value="0.6" 
                   data-valueformat=",.0%"
-                  data-restrict="Math.max(0, Math.min(1.0001, round(v, 0.05)))" 
+                  data-restrict="Math.max(0, Math.min(1, round(v > 1 ? v / 100 : v, 0.05)))" 
                   data-scale="d3.scaleLinear().domain([0, 1]).clamp(true)" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
