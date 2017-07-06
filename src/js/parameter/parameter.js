@@ -39,7 +39,9 @@ function setChanged(label, value) {
   let v = value, modified = true;
 
   // swap . and , for internationalization
-  v = (v + "").replace(/[,.]/g, m => m === "," ? "." : ",");
+  if (isNaN(v)) {
+    v = (v + "").replace(/,/g, ".");
+  }
 
   if (!v || isNaN(v)) {
     v = data.value;
