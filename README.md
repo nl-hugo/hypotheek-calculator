@@ -35,24 +35,29 @@ To deploy (after commit):
 
 Known issues:
 
--[] round hypotheekbedrag and woz to 500 precision
+- [ ] round hypotheekbedrag and woz to 500 precision
 
--[] round interest to 0.05% precision
+- [ ] round interest to 0.05% precision
 
--[] round hypotheekvorm to 10% precision
+- [ ] round hypotheekvorm to 10% precision
 
--[] manual input of interest rates should accept e.g. 3.5 instead of 0.035
+- [ ] manual input of interest rates should accept e.g. 3.5 instead of 0.035
 
--[] linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
+- [x] chart should appear at the top on smaller screen sizes, not on the bottom
 
--[] overlap of input and slider on smaller screen sizes
+- [ ] overlap of input and slider on smaller screen sizes
 
--[x] chart should appear at the top on smaller screen sizes, not on the bottom
+- [ ] reset button should be on top of the input field
 
--[] reset button should be on top of the input field
+- [ ] no left margin on small screen
 
--[] dynamic chart size?
+- [ ] dynamic chart size?
 
+- [ ] linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
+
+- [ ] eigenwoningforfait does not update when changing WOZ waarde
+
+- [ ] compute optimal linear/annuity mix
 
 
 
