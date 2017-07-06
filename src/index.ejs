@@ -18,11 +18,11 @@
 
       <div class="jumbotron">
         <h1 class="text-white">Bereken uw maandlasten</h1>
-          <p class="text-white">
-            Benieuwd wat uw hypotheek u gaat kosten? Bereken nu uw (netto) maandlasten.<br>
-            <br>
-            <a class="btn btn-secondary btn-md" href="#woning" role="button">Start »</a>
-          </p>
+        <p class="text-white">
+          Benieuwd wat uw hypotheek u gaat kosten? Bereken nu uw (netto) maandlasten.<br>
+          <br>
+          <a class="btn btn-secondary btn-md" href="#woning" role="button">Start »</a>
+        </p>
       </div>
 
 
@@ -105,12 +105,12 @@
               In Nederland wordt de hoogte van het hypotheekbedrag voor de aankoop van een woning in stappen teruggebracht tot 100% van de woningwaarde. Geef hieronder het aankoopbedrag van de woning aan, of, als dit afwijkt, de hoogte van het te lenen bedrag.
             </div>
             <div class="parameters">
-  <!-- TODO: precision op 100 nauwkeurig -->
+
               <label class="a-parameter" 
                   data-parameter="koopsom" 
                   data-value="2.5e5" 
                   data-valueformat="$,.0f"
-                  data-restrict="Math.max(3e4, Math.min(1e6, (v < 1000 ? v * 1000 : v)))" 
+                  data-restrict="Math.max(3e4, Math.min(1e6, round(v < 1000 ? v * 1000 : v, 500)))" 
                   data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
                   data-scaleformat="$,.0s"
                   data-readonly="false">
@@ -150,7 +150,7 @@
                   data-parameter="hypotheekvorm" 
                   data-value="0.6" 
                   data-valueformat=",.0%"
-                  data-restrict="Math.max(-0.0001, Math.min(1.0001, v))" 
+                  data-restrict="Math.max(0, Math.min(1.0001, round(v, 0.05)))" 
                   data-scale="d3.scaleLinear().domain([0, 1]).clamp(true)" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -168,7 +168,7 @@
                   data-parameter="renteAnnuitair" 
                   data-value="0.0345" 
                   data-valueformat=",.2%"
-                  data-restrict="Math.max(0, Math.min(.08, (v > 1 ? v / 100 : v)))" 
+                  data-restrict="Math.max(0, Math.min(.08, round(v > 1 ? v / 100 : v, 0.0005)))" 
                   data-scale="d3.scaleLinear().domain([0, .08])" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -183,7 +183,7 @@
                   data-parameter="renteLineair" 
                   data-value="0.0280" 
                   data-valueformat=",.2%"
-                  data-restrict="Math.max(0, Math.min(.08, (v > 1 ? v / 100 : v)))" 
+                  data-restrict="Math.max(0, Math.min(.08, round(v > 1 ? v / 100 : v, 0.0005)))" 
                   data-scale="d3.scaleLinear().domain([0, .08])" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -224,12 +224,11 @@
             </div>
             <div class="parameters">
 
-  <!-- TODO: precision op 100 nauwkeurig -->
               <label class="a-parameter" 
                   data-parameter="woz" 
                   data-value="2.5e5" 
                   data-valueformat="$,.0f"
-                  data-restrict="Math.max(3e4, Math.min(1e6, (v < 1000 ? v * 1000 : v)))" 
+                  data-restrict="Math.max(3e4, Math.min(1e6, round(v < 1000 ? v * 1000 : v, 500)))" 
                   data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
                   data-scaleformat="$,.0s"
                   data-readonly=false>

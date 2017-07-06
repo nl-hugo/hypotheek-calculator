@@ -1,6 +1,6 @@
 # Hypotheek calculator
 
-Computes monthly payments for a Dutch mortgage loan. 
+Computes monthly payments for a Dutch mortgage loan :house_with_garden: :euro:. 
 
 ![thumbnail](thumbnail.png)
 
@@ -35,11 +35,11 @@ To deploy (after commit):
 
 Known issues:
 
-- [ ] round hypotheekbedrag and woz to 500 precision
+- [x] round hypotheekbedrag and woz to 500 precision
 
-- [ ] round interest to 0.05% precision
+- [x] round interest to 0.05% precision
 
-- [ ] round hypotheekvorm to 10% precision
+- [x] round hypotheekvorm to 5% precision
 
 - [ ] manual input of interest rates should accept e.g. 3.5 instead of 0.035
 

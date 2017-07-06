@@ -56,17 +56,23 @@ function setChanged(label, value) {
 
   // hide unused labels
   d3.select("[data-parameter=renteLineair]")
-    .classed("hidden", (data.parameter === "hypotheekvorm" && v >= 0.9));
+    .classed("hidden", (data.parameter === "hypotheekvorm" && v > 0.96));
 
   d3.select("[data-parameter=renteAnnuitair]")
-    .classed("hidden", (data.parameter === "hypotheekvorm" && v <= 0.1));
+    .classed("hidden", (data.parameter === "hypotheekvorm" && v < 0.04));
 
   // notify model to update chart
   next(data.parameter, v);
 }
 
+// translates the value of 1 field to a value on another
 function translate(val, field, scale) { // eslint-disable-line no-unused-vars
   d3.select("[data-parameter=" + field + "]").each(function() {
     setChanged(this, scale(Math.round(val)));
   });
+}
+
+// rounds the value of x to the nearest y
+function round(x, y) { // eslint-disable-line no-unused-vars
+  return y > 0 ? Math.round(x / y) * y : x;
 }
