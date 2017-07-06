@@ -13,7 +13,7 @@ const line = d3.line()
     .x(d => x(d.data.date))
     .y(d => y(d[1]));
 
-const netline = d3.line()
+const nettline = d3.line()
     .x(d => x(d.date))
     .y(d => y(d.nett));
 
@@ -91,11 +91,11 @@ export function update(_data) {
   layer.exit().remove();
 
   // niet zo fraai...
-  g.selectAll(".nett-line").remove();
+  g.selectAll(".nett").remove();
   g.append("path")
     .datum(data)
-    .attr("class", "nett-line")
-    .attr("d", netline);
+    .attr("class", "nett")
+    .attr("d", nettline);
 
   gAxis.selectAll(".axis--x")
       .call(d3.axisBottom(x).ticks(d3.timeYear.every(5)));

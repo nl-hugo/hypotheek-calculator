@@ -1,3 +1,4 @@
+// _chart.scss
 
 .axis--y line,
 .axis--x line {
@@ -41,7 +42,6 @@
   opacity: 0.5;
 }
 
-.nett-line {
+path.nett {
   fill: none;
-  stroke: green;
 }

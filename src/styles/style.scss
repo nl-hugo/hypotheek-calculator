@@ -1,4 +1,4 @@
-/* src/style.scss */
+// style.scss
 
 @import 'variables';
 @import 'mixins';
@@ -6,6 +6,7 @@
 @import 'chart';
 @import 'table';
 @import 'section';
+@import 'footer';
 
 /*font-family: 'Montserrat', sans-serif;*/
 /* montserrat-regular - latin */
@@ -44,7 +45,7 @@ body {
 @include generate-elements("linear", $linear);
 @include generate-elements("amortization", $amortization);
 @include generate-elements("interest", $interest);
-@include generate-elements("nett", "silver");
+@include generate-elements("nett", $nett);
 
 .navbar-brand {
   text-transform: uppercase;
@@ -54,17 +55,9 @@ body {
   background-color: $primary-color;
 }
 
-footer {
-  border-top: .05rem solid $secondary-color;
-  padding-top: 1.2em;
-  font-size: 0.8em;
-}
-
 .top {
   top: 0;
   bottom: auto;
-/*  border-top: solid silver;*/
-/*  border-width: 1px 0;*/
   padding: 1em;
   width: 100%;
   max-width: 600px;
