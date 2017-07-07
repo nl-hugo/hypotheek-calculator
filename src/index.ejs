@@ -110,7 +110,7 @@
                   data-parameter="koopsom" 
                   data-value="2.5e5" 
                   data-valueformat="$,.0f"
-                  data-restrict="Math.max(3e4, Math.min(1e6, round(v < 1000 ? v * 1000 : v, 500)))" 
+                  data-restrict="Math.max(3e4, Math.min(1e6, roundN(v < 1000 ? v * 1000 : v, 500)))" 
                   data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
                   data-scaleformat="$,.0s"
                   data-readonly="false">
@@ -150,7 +150,7 @@
                   data-parameter="hypotheekvorm" 
                   data-value="0.6" 
                   data-valueformat=",.0%"
-                  data-restrict="Math.max(0, Math.min(1, round(v > 1 ? v / 100 : v, 0.05)))" 
+                  data-restrict="Math.max(0, Math.min(1, roundN(v > 1 ? v / 100 : v, 0.05)))" 
                   data-scale="d3.scaleLinear().domain([0, 1]).clamp(true)" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -168,7 +168,7 @@
                   data-parameter="renteAnnuitair" 
                   data-value="0.0345" 
                   data-valueformat=",.2%"
-                  data-restrict="Math.max(0, Math.min(.08, round(v > 1 ? v / 100 : v, 0.0005)))" 
+                  data-restrict="Math.max(0, Math.min(.08, roundN(v > 1 ? v / 100 : v, 0.0005)))" 
                   data-scale="d3.scaleLinear().domain([0, .08])" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -183,7 +183,7 @@
                   data-parameter="renteLineair" 
                   data-value="0.0280" 
                   data-valueformat=",.2%"
-                  data-restrict="Math.max(0, Math.min(.08, round(v > 1 ? v / 100 : v, 0.0005)))" 
+                  data-restrict="Math.max(0, Math.min(.08, roundN(v > 1 ? v / 100 : v, 0.0005)))" 
                   data-scale="d3.scaleLinear().domain([0, .08])" 
                   data-scaleformat=",.0%"
                   data-readonly="0">
@@ -228,8 +228,8 @@
                   data-parameter="woz" 
                   data-value="2.5e5" 
                   data-valueformat="$,.0f"
-                  data-restrict="Math.max(3e4, Math.min(1e6, round(v < 1000 ? v * 1000 : v, 500)))" 
-                  data-scale="d3.scaleLinear().domain([3e4, 1e6])" 
+                  data-restrict="Math.max(2e4, Math.min(1e6, roundN(v < 1000 ? v * 1000 : v, 500)))" 
+                  data-scale="d3.scaleLinear().domain([2e4, 1e6])" 
                   data-scaleformat="$,.0s"
                   data-readonly=false>
                 <div class="a-parameter-label">
@@ -240,8 +240,9 @@
                 <div class="a-parameter-sublabel">
                   <span class="a-value hidden" 
                     data-value="translate(v, 'eigenwoningforfait', 
-                      d3.scaleOrdinal([0,0.003,0.0045,0.0060,0.0075])
-                        .domain([12500,25000,50000,75000,1050000]));"></span>.
+                      d3.scaleQuantile()
+                        .domain([0,12501,25001,50001,75001,1050001])
+                        .range([0,0.003,0.0045,0.0060,0.0075]));"></span>.
                 </div>
               </label>
 
@@ -250,7 +251,7 @@
                   data-value="0.0075" 
                   data-valueformat=",.2%"
                   data-restrict="Math.max(0, Math.min(.0075, (v > 1 ? v / 100 : v)))" 
-                  data-scale="d3.scaleLinear().domain([0, .0075])" 
+                  data-scale="d3.scaleLinear().domain([0.004, .008])" 
                   data-scaleformat=",.1%"
                   data-readonly=true>
                 <div class="a-parameter-label">
@@ -283,7 +284,7 @@
 
               <label class="a-parameter" 
                   data-parameter="belasting" 
-                  data-value="0.52" 
+                  data-value="0.408" 
                   data-valueformat=",.2%"
                   data-restrict="Math.max(0.3655, Math.min(0.52, v))" 
                   data-scale="d3.scaleLinear().domain([0.3655, 0.52])" 

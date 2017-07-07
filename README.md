@@ -55,7 +55,7 @@ Known issues:
 
 - [ ] linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
 
-- [ ] eigenwoningforfait does not update when changing WOZ waarde
+- [x] eigenwoningforfait does not update when changing WOZ waarde
 
 - [ ] compute optimal linear/annuity mix
 

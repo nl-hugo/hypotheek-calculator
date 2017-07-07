@@ -78,7 +78,7 @@ function translate(val, field, scale) { // eslint-disable-line no-unused-vars
   });
 }
 
-// rounds the value of x to the nearest y
-function round(x, y) { // eslint-disable-line no-unused-vars
-  return y > 0 ? Math.round(x / y) * y : x;
+// rounds the value of x to the nearest n
+function roundN(x, n) { // eslint-disable-line no-unused-vars
+  return n > 0 ? Math.round(x / n) * n : x;
 }
