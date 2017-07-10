@@ -45,17 +45,23 @@ Known issues:
 
 - [x] chart should appear at the top on smaller screen sizes, not on the bottom
 
+- [x] eigenwoningforfait does not update when changing WOZ waarde
+
+- [x] linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
+
 - [ ] overlap of input and slider on smaller screen sizes
 
-- [ ] reset button should be on top of the input field
+- [ ] reset button should be on top of the input field / blocks slider
 
 - [ ] no left margin on small screen
 
-- [ ] dynamic chart size?
+- [ ] chart does not resize on smaller screens
 
-- [ ] linear/annuity interest rates re-appear after hiding them, without touching the hypotheekvorm slider
 
-- [x] eigenwoningforfait does not update when changing WOZ waarde
+
+Nice to haves:
+
+- [ ] add tests
 
 - [ ] compute optimal linear/annuity mix
 

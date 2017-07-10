@@ -61,11 +61,13 @@ function setChanged(label, value) {
   });
 
   // hide unused labels
-  d3.select("[data-parameter=renteLineair]")
-    .classed("hidden", (data.parameter === "hypotheekvorm" && v > 0.96));
+  const lin = d3.select("[data-parameter=renteLineair]");
+  lin.classed("hidden", (data.parameter === "hypotheekvorm" && v > 0.96) 
+    || (lin.classed("hidden") && data.parameter !== "hypotheekvorm"));
 
-  d3.select("[data-parameter=renteAnnuitair]")
-    .classed("hidden", (data.parameter === "hypotheekvorm" && v < 0.04));
+  const ann = d3.select("[data-parameter=renteAnnuitair]");
+  ann.classed("hidden", (data.parameter === "hypotheekvorm" && v < 0.04) 
+    || (ann.classed("hidden") && data.parameter !== "hypotheekvorm"));
 
   // notify model to update chart
   next(data.parameter, v);
